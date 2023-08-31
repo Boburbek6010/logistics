@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:f_exam/admin/pages/admin_page.dart';
@@ -13,7 +15,7 @@ void main() {
   setup().then((value) {
     return runApp(LayoutBuilder(
       builder: (context, constrains) {
-        if(constrains.maxWidth >= 1200&&constrains.maxHeight >=650) {
+        if(constrains.maxWidth >= 1000&&constrains.maxHeight >=635) {
           return const _MyAppWeb();
         }else{
           return const _MyAppOther();

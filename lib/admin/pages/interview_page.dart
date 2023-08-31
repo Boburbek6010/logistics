@@ -37,6 +37,7 @@ class _InterviewPageState extends State<InterviewPage> {
     String q3 = controller3.text.trim();
     String q4 = controller4.text.trim();
     String q5 = controller5.text.trim();
+    String qT = controllerType.text.trim();
 
     if (name.isEmpty ||
         q1.isEmpty ||
@@ -49,7 +50,7 @@ class _InterviewPageState extends State<InterviewPage> {
     }
     setState(() {});
 
-    InterviewUser post = InterviewUser(name, q1, q2, q3, q4, q5);
+    InterviewUser post = InterviewUser(name, q1, q2, q3, q4, q5, qT);
 
     await RTDBService.storePost(post).then((value) {
       Navigator.of(context).pop();

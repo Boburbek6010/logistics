@@ -1,4 +1,4 @@
-import 'package:f_exam/admin/controller.dart';
+import 'package:f_exam/admin/firebase_controller.dart';
 import 'package:f_exam/style/custom_scaffold.dart';
 import 'package:f_exam/user/home/widgets/glass_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -55,6 +55,7 @@ class _TaskPageState extends State<TaskPage> {
                       String userName = parts[2];
                       String startedTime = parts[3];
                       String uploadedTime = parts[4];
+                      String fileType = parts[4].substring(17, 20);
                       return Center(
                         child: GlassWidget(
                           height: double.infinity,
@@ -191,7 +192,29 @@ class _TaskPageState extends State<TaskPage> {
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
-                                        uploadedTime,
+                                        uploadedTime.substring(0, uploadedTime.length-4),
+                                        style: const TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      const Text(
+                                        "File type:",
+                                        style: TextStyle(
+                                          fontSize: 17,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Text(
+                                        fileType,
                                         style: const TextStyle(
                                           fontSize: 15,
                                           color: Colors.white,
