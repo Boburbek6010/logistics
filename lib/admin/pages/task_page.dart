@@ -78,7 +78,13 @@ class _TaskPageState extends State<TaskPage> {
                             child: Center(
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Text("${index+1}", style: const TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.w600,
+                                  ),),
                                   Row(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
