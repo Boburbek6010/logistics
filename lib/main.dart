@@ -31,7 +31,7 @@ class _MyAppWeb extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'U Exam',
-      home: kIsWeb ? const AuthGate() :const Scaffold(body: Center(child: Text("This app in only available for web"),),),
+      home: kIsWeb ? const AdminPage() :const Scaffold(body: Center(child: Text("This app in only available for web"),),),
       routes: {
         AuthGate.id: (context) => const AuthGate(),
         SignInPage.id: (context) => const SignInPage(),

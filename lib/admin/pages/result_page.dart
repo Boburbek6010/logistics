@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:f_exam/style/custom_scaffold.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -61,18 +62,10 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Container(
-          padding: EdgeInsets.zero,
-          margin: EdgeInsets.zero,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage("assets/images/img3.png"),
-            ),
-          ),
-          child: isLoading ?GridView.builder(
+    return CustomScaffold(
+      child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: isLoading ?GridView.builder(
             padding: EdgeInsets.zero,
             shrinkWrap: false,
             physics: const BouncingScrollPhysics(),
@@ -171,7 +164,7 @@ class _ResultPageState extends State<ResultPage> {
             },
           ):const Center(
             child: CircularProgressIndicator(),
-          ),
-        ));
+          )),
+    );
   }
 }
