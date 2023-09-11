@@ -11,6 +11,8 @@ import 'package:f_exam/setup.dart';
 import 'package:f_exam/auth/pages/auth_gate.dart';
 import 'package:f_exam/user/home/pages/home_page.dart';
 
+import 'admin/pages/super_admin_page.dart';
+
 void main() {
   setup().then((value) {
     return runApp(LayoutBuilder(
@@ -33,7 +35,7 @@ class _MyAppWeb extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'U Exam',
-      home: kIsWeb ? const AdminPage() :const Scaffold(body: Center(child: Text("This app in only available for web"),),),
+      home: kIsWeb ? const SignInPage() :const Scaffold(body: Center(child: Text("This app in only available for web"),),),
       routes: {
         AuthGate.id: (context) => const AuthGate(),
         SignInPage.id: (context) => const SignInPage(),
@@ -42,6 +44,7 @@ class _MyAppWeb extends StatelessWidget {
         InterviewPage.id: (context) => const InterviewPage(),
         TaskPage.id: (context) => const TaskPage(),
         ResultPage.id: (context) => const ResultPage(),
+        SuperAdminPage.id: (context) => const SuperAdminPage(),
       },
     );
   }
