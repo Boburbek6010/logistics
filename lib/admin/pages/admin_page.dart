@@ -1,3 +1,4 @@
+import 'package:f_exam/admin/pages/super_admin_page.dart';
 import 'package:f_exam/admin/pages/task_page.dart';
 import 'package:flutter/material.dart';
 import 'package:f_exam/admin/model/user_model.dart';
@@ -24,6 +25,7 @@ class _AdminPageState extends State<AdminPage> {
     const InterviewPage(),
     const TaskPage(),
     const ResultPage(),
+    const SuperAdminPage(),
   ];
 
   final Map<String, String> _names = {
@@ -58,13 +60,7 @@ class _AdminPageState extends State<AdminPage> {
                 ),
                 elevation: 0,
                 color: Colors.transparent,
-                onPressed: () {
-                  if(index == 3){
-                    Utils.fireSnackBar("Be patient it will be available soon", context);
-                  }else {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => _pages[index]));
-                  }
-                },
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => _pages[index])),
                 child: GlassWidget(
                     height: double.infinity,
                     width: double.infinity,
