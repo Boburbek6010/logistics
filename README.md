@@ -1,6 +1,6 @@
 # logistics_company
 
-Special Project for PDP University exam system
+Special Project for Logistics Company
 
 ## Getting Started
 
