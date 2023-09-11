@@ -1,5 +1,5 @@
 import 'package:firebase_database/firebase_database.dart';
-import 'package:logistics_company/admin/model/interview_user.dart';
+import 'package:logistics_company/models/interview_user.dart';
 
 class RTDBService {
   static final database = FirebaseDatabase.instance.ref();

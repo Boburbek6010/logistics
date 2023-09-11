@@ -1,7 +1,7 @@
 import 'package:logistics_company/setup.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'admin/pages/super_admin_page.dart';
+import 'pages/super_admin_page.dart';
 
 void main() {
   setup().then((value) {
