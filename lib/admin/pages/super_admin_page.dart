@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:f_exam/style/custom_scaffold.dart';
 import 'package:flutter/material.dart';
 
 class SuperAdminPage extends StatefulWidget {
@@ -39,9 +38,8 @@ class _SuperAdminPageState extends State<SuperAdminPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
+    return Scaffold(
+        backgroundColor: Colors.grey,
         body: Stack(
           children: [
             isLoading
@@ -121,7 +119,6 @@ class _SuperAdminPageState extends State<SuperAdminPage> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

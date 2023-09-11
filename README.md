@@ -1,4 +1,4 @@
-# f_exam
+# logistics_company
 
 Special Project for PDP University exam system
 

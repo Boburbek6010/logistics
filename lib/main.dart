@@ -1,23 +1,13 @@
-import 'dart:developer';
-
+import 'package:logistics_company/setup.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:f_exam/admin/pages/admin_page.dart';
-import 'package:f_exam/admin/pages/result_page.dart';
-import 'package:f_exam/admin/pages/task_page.dart';
-import 'package:f_exam/auth/pages/sign_in_page.dart';
-import 'package:f_exam/admin/pages/interview_page.dart';
-import 'package:f_exam/setup.dart';
-import 'package:f_exam/auth/pages/auth_gate.dart';
-import 'package:f_exam/user/home/pages/home_page.dart';
-
 import 'admin/pages/super_admin_page.dart';
 
 void main() {
   setup().then((value) {
     return runApp(LayoutBuilder(
       builder: (context, constrains) {
-        if(constrains.maxWidth >= 1000&&constrains.maxHeight >=635) {
+        if(constrains.maxWidth >= 1200&&constrains.maxHeight >=635) {
           return const _MyAppWeb();
         }else{
           return const _MyAppOther();
@@ -34,16 +24,9 @@ class _MyAppWeb extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'U Exam',
-      home: kIsWeb ? const SignInPage() :const Scaffold(body: Center(child: Text("This app in only available for web"),),),
+      title: 'Logistics Company',
+      home: kIsWeb ? const SuperAdminPage() :const Scaffold(body: Center(child: Text("This app in only available for web"),),),
       routes: {
-        AuthGate.id: (context) => const AuthGate(),
-        SignInPage.id: (context) => const SignInPage(),
-        AdminPage.id: (context) => const AdminPage(),
-        HomePage.id: (context) => const HomePage(),
-        InterviewPage.id: (context) => const InterviewPage(),
-        TaskPage.id: (context) => const TaskPage(),
-        ResultPage.id: (context) => const ResultPage(),
         SuperAdminPage.id: (context) => const SuperAdminPage(),
       },
     );
@@ -57,7 +40,7 @@ class _MyAppOther extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'U Exam',
+        title: 'Logistics Company',
       home: Scaffold(
         body: Center(
           child: Column(

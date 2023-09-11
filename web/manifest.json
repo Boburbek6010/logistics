@@ -1,6 +1,6 @@
 {
-    "name": "f_exam",
-    "short_name": "f_exam",
+    "name": "logistics_company",
+    "short_name": "logistics_company",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
